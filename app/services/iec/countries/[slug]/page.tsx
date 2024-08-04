@@ -1,7 +1,5 @@
-import MiniUniv from '@/components/ui/MiniUniv'
-import { FeatureUniv, topUniversities } from '@/context/ies'
-import OverseasCard from '@/components/ui/OverseasCard';
-import { overseas } from '@/context/data';
+"use client"
+import { FeatureUniv } from '@/context/ies'
 import {
     Carousel,
     CarouselContent,
@@ -34,6 +32,7 @@ import {
 import React from 'react'
 import Image from 'next/image';
 import IESUnivCard from '@/components/ui/IESUnivCard';
+import { useRouter } from 'next/navigation';
 
 
 const intake = [
@@ -49,6 +48,13 @@ const intake = [
 
 
 const Countries = ({ params }: { params: { slug: string } }) => {
+
+    const router = useRouter()
+
+    function handleBtn() {
+        router.push('/reward-store/education/overseas')
+    }
+
     function getLastWord(input: string): string {
         const words = input.trim().split('-');
         const lastWord = words.pop() || '';
@@ -216,7 +222,7 @@ const Countries = ({ params }: { params: { slug: string } }) => {
             <section className='max-w-sm md:max-w-7xl w-full h-max flex flex-col items-center justify-center gap-3 p-5 mt-10 bg-dark_bg/10 rounded-3xl'>
                 <h1 className='max-w-6xl text-4xl font-semibold text-center'>Ready to thrive your knowledge from Universities of {country}</h1>
                 <p className='max-w-5xl text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione repudiandae possimus, quam, aut at vel consequuntur dolor voluptatem, reprehenderit officia ullam omnis consequatur ab? Dicta quod esse hic magni non.</p>
-                <button className='bg-primary hover:scale-105 hover:bg-solid text-secondary font-medium px-5 py-3 mt-5 rounded-2xl smooth'>Enquire Now!</button>
+                <button onClick={handleBtn} className='bg-primary hover:scale-105 hover:bg-solid text-secondary font-medium px-5 py-3 mt-5 rounded-2xl smooth'>Enquire Now!</button>
             </section>
 
         </main >

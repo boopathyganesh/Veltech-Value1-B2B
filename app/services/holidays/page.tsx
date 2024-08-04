@@ -1,10 +1,18 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import CountryCard from './CountryCard'
 import PackageCard from './PackageCard'
+import { useRouter } from 'next/navigation'
 
 
-const page = () => {
+const Holidays = () => {
+
+  const router = useRouter()
+  function handleBtn(){
+    router.push("/reward-store/travel/holiday")
+  }
+
   return (
     <main className='max-w-sm md:max-w-full mx-auto w-full flex flex-col items-center justify-center overflow-hidden gap-5 bg-light_bg text-secondary'>
       <section className='relative max-w-full w-full h-[500px] flex items-center justify-center'>
@@ -92,10 +100,10 @@ const page = () => {
       <section className='max-w-sm md:max-w-7xl w-full h-max flex flex-col items-center justify-center gap-3 p-5 mb-10 bg-dark_bg/10 rounded-3xl'>
         <h1 className='max-w-6xl text-4xl font-semibold text-center'>Ready to enjoy your holidays!</h1>
         <p className='max-w-5xl text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione repudiandae possimus, quam, aut at vel consequuntur dolor voluptatem, reprehenderit officia ullam omnis consequatur ab? Dicta quod esse hic magni non.</p>
-        <button className='bg-primary hover:scale-105 hover:bg-solid text-secondary font-medium px-5 py-3 mt-5 rounded-2xl smooth'>Book Now!</button>
+        <button onClick={handleBtn} className='bg-primary hover:scale-105 hover:bg-solid text-secondary font-medium px-5 py-3 mt-5 rounded-2xl smooth'>Book Now!</button>
       </section>
     </main>
   )
 }
 
-export default page
+export default Holidays;

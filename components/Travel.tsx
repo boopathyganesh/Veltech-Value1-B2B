@@ -3,38 +3,10 @@ import CustomCard from './ui/CustomCard';
 import BigCard from './ui/BigCard';
 import Image from 'next/image';
 import HolidayCard from './ui/HolidayCard';
+import { holidays } from '@/context/data';
 
 const Travel = () => {
-    const data = [
-        {
-            title: "Kerala BackWaters - 5 Days 5 Nights",
-            price: 999,
-            content: "By Onecontributor in Design",
-            rating: 4.5,
-            imageUrl: "/images/kerla.webp"
-        },
-        {
-            title: "Adobe Illustrator CC – Advanced Training Course",
-            price: 999,
-            content: "By Onecontributor in Design",
-            rating: 4.5,
-            imageUrl: "/images/tn.jpg"
-        },
-        {
-            title: "Adobe Illustrator CC – Advanced Training Course",
-            price: 999,
-            content: "By Onecontributor in Design",
-            rating: 4.5,
-            imageUrl: "/images/Goa.jpg"
-        },
-        {
-            title: "Adobe Illustrator CC – Advanced Training Course",
-            price: 999,
-            content: "By Onecontributor in Design",
-            rating: 4.5,
-            imageUrl: "/images/maldives.jpg"
-        }
-    ];
+    
     return (
         <section className='w-full bg-light_bg text-secondary py-2'>
             <div className='max-w-sm md:max-w-8xl mx-auto p-5 md:px-10 rounded-2xl'>
@@ -54,14 +26,14 @@ const Travel = () => {
                     <div className='max-w-sm md:max-w-7xl mx-auto my-10 relative'>
                         <h1 className='text-2xl font-semibold mb-2 text-center md:text-left'>Bus Booking</h1>
                         <div className='flex items-center justify-center gap-5 py-10'>
-                            <BigCard image={data[0].imageUrl} />
+                            <BigCard image={holidays[0].imageUrl} />
                         </div>
                         <button className='absolute -bottom-5 lg:top-0 lg:bottom-auto right-10 bg-solid px-3 py-2 rounded-2xl'>View More</button>
                     </div>
                     <div className='max-w-sm md:max-w-7xl mx-auto my-5 relative'>
                         <h1 className='text-2xl font-semibold mb-2 text-center md:text-left'>Holiday Planners</h1>
                         <div className='flex flex-wrap flex-col md:flex-row items-center justify-center gap-5 pt-10'>
-                            {data.map((card, index) => (
+                            {holidays.map((card, index) => (
                                 <HolidayCard key={index} title={card.title} content={card.content} image={card.imageUrl} rating={card.rating} price={card.price} />
                             ))}
                         </div>

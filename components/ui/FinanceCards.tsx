@@ -1,15 +1,37 @@
-import { formatCurrency } from '@/lib/utils';
+"use client"
 import Image, { StaticImageData } from 'next/image'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 interface CardProps {
+    type:"loan"|"insurance"|"credit"|"capital"
+    id?: string;
     title: string;
     content: string;
     image: string | StaticImageData;
-    link: string
 }
 
-const FinanceCard = ({ title, content, image, link }: CardProps) => {
+const FinanceCard = ({ title, content, image, id, type }: CardProps) => {
+    const router = useRouter()
+    function handleBtnClick(id?: string) {
+        if (id) {
+            if(type === "loan"){
+                router.push('/reward-store/finance/loans' + id)
+            }
+            else if(type === "insurance"){
+                router.push('/reward-store/finance/insurance' + id)
+            }
+            else if(type === "credit"){
+                router.push('/reward-store/finance/credit-cards' + id)
+            }
+            else if(type === "capital"){
+                router.push('/reward-store/finance/capital-market' + id)
+            }
+        }
+        else {
+            router.push('/services/finance/')
+        }
+    }
     return (
         <div className='flex flex-col items-center justify-between w-72 h-56 bg-solid/20 text-secondary rounded-2xl overflow-hidden'>
             <div className='flex flex-col items-start justify-between h-full text-tertiary p-5'>
@@ -22,7 +44,7 @@ const FinanceCard = ({ title, content, image, link }: CardProps) => {
                     </div>
                     <p className='text-secondary/70 text-sm'>{content}</p>
                 </div>
-                <a href={link} className='mt-3 p-2 bg-primary text-secondary rounded-lg'>Apply Now</a>
+                <button onClick={() => handleBtnClick(id)} className='mt-3 p-2 bg-primary text-secondary rounded-lg'>Apply Now</button>
             </div>
         </div>
     )

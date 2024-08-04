@@ -32,7 +32,7 @@ const BigCard = ({ image }: CardProps) => {
 
     useEffect(()=>{
         if(show){
-            setTimeout(handleRedirect, 3000);
+            setTimeout(handleRedirect, 4000);
         }
     })
 
@@ -52,10 +52,9 @@ const BigCard = ({ image }: CardProps) => {
             <AlertDialog open={show}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
-                        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                        <AlertDialogTitle>Redirecting to Value1.world</AlertDialogTitle>
                         <AlertDialogDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
+                            You will be redirected to value1.world. There you can easily book your buses. Happy Holidays!!!
                         </AlertDialogDescription>
                     </AlertDialogHeader>
                 </AlertDialogContent>

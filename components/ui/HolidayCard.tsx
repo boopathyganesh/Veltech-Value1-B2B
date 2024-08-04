@@ -1,5 +1,6 @@
 import { formatCurrency } from '@/lib/utils';
 import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 
 interface CardProps {
@@ -11,13 +12,14 @@ interface CardProps {
 }
 
 const HolidayCard = ({ title, content, image, rating, price }: CardProps) => {
+    
     return (
         <div className='flex flex-col items-center justify-between w-72 h-[400px] bg-dark_bg/10 text-secondary rounded-2xl overflow-hidden'>
-            <div className='flex items-center justify-center h-full'>
+            <div className='flex items-center justify-center h-1/2'>
                 <Image src={image} alt={title} width={800} height={800} className='h-full w-auto ' />
             </div>
-            <div className='flex flex-col items-start justify-center gap-1.5 p-5'>
-                <h1 className='text-lg font-medium text-secondary'>{title}</h1>
+            <div className='flex flex-col items-start justify-start gap-1.5 p-4 w-full h-1/2'>
+                <h1 className='text-lg font-medium text-secondary line-clamp-2'>{title}</h1>
                 <span className='flex items-center justify-center'>
                     {[...Array(5)].map((_, i) => (
                         <svg
@@ -35,7 +37,7 @@ const HolidayCard = ({ title, content, image, rating, price }: CardProps) => {
                     <span className='ml-1'>({rating}/5)</span>
                 </span>
                 <span className='font-bold text-lg'>{formatCurrency(price)}/person</span>
-                <button className='px-5 py-3 textblack bg-primary rounded-xl'>Enquire Now!</button>
+                <Link href={'/services/holidays'} className='px-5 py-3 textblack bg-primary rounded-xl'>Enquire Now!</Link>
             </div>
         </div>
     )

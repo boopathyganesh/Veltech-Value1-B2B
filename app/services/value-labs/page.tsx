@@ -35,7 +35,7 @@ const ExplainCard = ({ index, image, title, subTitle, content }: CardProps) => {
                     <Image src={image} alt={''} height={500} width={500} className={`w-full ${scale} smooth`} />
                 </div>
                 <div className='w-full px-4'>
-                    <h1 className= {`text-2xl font-medium mb-2 text-center ${text}`}>{subTitle}</h1>
+                    <h1 className={`text-2xl font-medium mb-2 text-center ${text}`}>{subTitle}</h1>
                     <p className='text-secondary text-center'>{content}</p>
                 </div>
             </div>
@@ -80,25 +80,23 @@ const ValueLabs = () => {
 
     const router = useRouter()
 
-    function handleBtn(){
+    function handleBtn() {
         router.push('/reward-store/value-labs')
     }
 
     return (
         <main className='max-w-sm md:max-w-full mx-auto w-full flex flex-col items-center justify-center overflow-hidden bg-light_bg'>
             {/* Hero */}
-            <section className='flex items-center justify-center bg-secondary_bg w-full h-[600px] overflow-hidden relative text-secondary'>
+            <section className='flex items-center justify-center bg-secondary_bg w-full h-[500px] overflow-hidden relative text-secondary'>
                 <div className='flex items-center justify-center gap-5 max-w-7xl h-full'>
-                    <div className='w-1/2 flex flex-col items-start justify-center'>
+                    <div className='w-1/2 flex flex-col items-start justify-center gap-5'>
                         <h1 className='text-5xl font-semibold leading-tight mb-2'>Welcome to Value1 Labs</h1>
                         <h1 className='text-3xl font-semibold leading-tight mb-5'>Ignite Your Entrepreneurial Spirit</h1>
-                        <p className='text-xl mb-2'>Are you ready to transform your ideas into reality? At Value1 Labs, we believe that every student has the potential to make a difference. Our entrepreneurial program is designed to empower and inspire you to take bold steps towards building your own venture.</p>
-                        <p className='text-xl mb-10'>Whether you’re brimming with innovative ideas or just starting to explore the world of entrepreneurship, Value1 Labs is here to support and guide you on your journey.</p>
-                        <a href='#apply' className='px-5 py-3 text-secondary font-medium bg-primary rounded-xl'>Connect with Us!</a>
+                        <a href='#apply' className='mt-5 px-5 py-3 text-secondary font-medium bg-primary rounded-xl'>Apply Now!</a>
                     </div>
                     <div className='relative w-1/2 h-full flex items-end justify-center'>
                         <Image src={"/images/stock/man-point-left.png"} alt='' height={800} width={600} />
-                        <div className='absolute top-32 left-5 -rotate-12 text-center p-5 rounded-xl bg-dark_bg text-primary w-64'>
+                        {/* <div className='absolute top-32 left-5 -rotate-12 text-center p-5 rounded-xl bg-dark_bg text-primary w-64'>
                             <h1 className='text-xl font-medium'>Incubation Support!</h1>
                         </div>
                         <div className='absolute top-32 right-5 rotate-12 text-center p-5 rounded-xl bg-dark_bg text-primary w-64'>
@@ -106,8 +104,15 @@ const ValueLabs = () => {
                         </div>
                         <div className='absolute bottom-0 text-center p-5 rounded-xl bg-dark_bg text-primary w-64'>
                             <h1 className='text-xl font-medium'>Financial Support!</h1>
-                        </div>
+                        </div> */}
                     </div>
+                </div>
+            </section>
+            <section className='max-w-8xl flex flex-col items-center justify-center gap-10 bg-light_bg w-full overflow-hidden relative text-secondary pt-10'>
+                <h1 className='text-4xl font-semibold text-secondary'>Are you ready to transform your ideas into reality? </h1>
+                <div className='max-w-5xl w-full text-center flex flex-col items-center justify-center gap-5'>
+                    <p className='text-xl mb-2'>At Value1 Labs, we believe that every student has the potential to make a difference. Our entrepreneurial program is designed to empower and inspire you to take bold steps towards building your own venture.</p>
+                    <p className='text-xl mb-10'>Whether you’re brimming with innovative ideas or just starting to explore the world of entrepreneurship, Value1 Labs is here to support and guide you on your journey.</p>
                 </div>
             </section>
             <section className='max-w-8xl flex flex-col items-center justify-center gap-10 bg-light_bg w-full overflow-hidden relative text-secondary py-10'>

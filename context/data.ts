@@ -317,53 +317,53 @@ export const DealsCategory = [
 
 export const loans = [
     {
-        id: 1,
+        id: "LN1",
         title: "Personal Loan",
         image: "/images/svgs/bank.svg",
         content: "Get the Personal Loan You Need to Achieve Your Goals!",
-        link: "#",
+
     },
     {
-        id: 2,
+        id: "LN2",
         title: "Education Loan",
         image: "/images/svgs/bank.svg",
         content: "Secure Your Child's Future With Our Specialized Education Loans For Their Academic Journey.",
-        link: "#",
+
     },
     {
-        id: 3,
+        id: "LN3",
         title: "Home Loan",
         image: "/images/svgs/bank.svg",
         content: "Your Dream Home Awaits - Explore Our Range Of Home Loan Products.",
-        link: "#",
+
     },
     {
-        id: 4,
+        id: "LN4",
         title: "Business Loan",
         image: "/images/svgs/bank.svg",
         content: "Get The Financial Boost You Need For Your Business With Our Flexible Business Loans.",
-        link: "#",
+
     },
     {
-        id: 5,
+        id: "LN5",
         title: "Gold Loan",
         image: "/images/svgs/bank.svg",
         content: "Fulfill Your Financial Needs With Gold Loan From Various Banking Partners",
-        link: "#",
+
     },
     {
-        id: 6,
+        id: "LN6",
         title: "Car Loan",
         image: "/images/svgs/bank.svg",
         content: "Turn Your Dream Car Into A Reality With Our Lightning-fast And Flexible Car Loans",
-        link: "#",
+
     },
     {
-        id: 7,
+        id: "LN7",
         title: "Loan against property",
         image: "/images/svgs/bank.svg",
         content: "Utilize Your Property's Potential To Fulfill Your Aspirations With Our Tailored Loan Against Property Options.",
-        link: "#",
+
     },
 ]
 
@@ -518,3 +518,34 @@ export const planDetails = [
     },
 
 ]
+
+export const holidays = [
+    {
+        title: "Kerala BackWaters - 5 Days 5 Nights",
+        price: 999,
+        content: "By Onecontributor in Design",
+        rating: 4.5,
+        imageUrl: "/images/kerla.webp"
+    },
+    {
+        title: "Tamil Nadu Temple Tourism - 5 Days 5 Nights",
+        price: 999,
+        content: "By Onecontributor in Design",
+        rating: 4.5,
+        imageUrl: "/images/tn.jpg"
+    },
+    {
+        title: "Goa - 5 Days 5 Nights",
+        price: 999,
+        content: "By Onecontributor in Design",
+        rating: 4.5,
+        imageUrl: "/images/Goa.jpg"
+    },
+    {
+        title: "Maldives - 5 Days 5 Nights",
+        price: 999,
+        content: "By Onecontributor in Design",
+        rating: 4.5,
+        imageUrl: "/images/maldives.jpg"
+    }
+];

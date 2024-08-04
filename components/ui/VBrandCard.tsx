@@ -16,10 +16,10 @@ const VBrandCard = ({ id, title, offer, image }: CardProps) => {
 
     function handleBtnClick(id?:string){
         if(id){
-            router.push('/reward-store/online-deals/'+id)
+            router.push('/reward-store/value-brands/'+id)
         }
         else{
-            router.push('/reward-store/online-deals/')
+            router.push('/reward-store/value-brands/')
         }
     }
 

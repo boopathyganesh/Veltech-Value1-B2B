@@ -18,6 +18,7 @@ import FinanceCard from './ui/FinanceCards';
 
 
 const Finance = () => {
+
     return (
         <section className='w-full bg-light_bg text-secondary py-2'>
             <div className='max-w-sm md:max-w-8xl mx-auto bg-light_bg p-5 md:px-10 rounded-2xl'>
@@ -49,7 +50,7 @@ const Finance = () => {
                                         <CarouselContent className='max-w-7xl flex px-4'>
                                             {loans.map((card, index) => (
                                                 <CarouselItem key={index} className='basis-1/4'>
-                                                    <FinanceCard key={index} title={card.title} content={card.content} image={card.image} link={card.link} />
+                                                    <FinanceCard key={index} title={card.title} content={card.content} image={card.image} type='loan' />
                                                 </CarouselItem>
                                             ))}
                                         </CarouselContent>
@@ -61,21 +62,21 @@ const Finance = () => {
                             <TabsContent value="insurance">
                                 <div className='flex flex-wrap items-center justify-center gap-5 py-4'>
                                     {loans.map((card, index) => (
-                                        <FinanceCard key={index} title={card.title} content={card.content} image={card.image} link={card.link} />
+                                        <FinanceCard key={index} title={card.title} content={card.content} image={card.image} type='insurance' />
                                     ))}
                                 </div>
                             </TabsContent>
                             <TabsContent value="credit-cards">
                                 <div className='flex flex-wrap items-center justify-center gap-5 py-4'>
                                     {loans.map((card, index) => (
-                                        <FinanceCard key={index} title={card.title} content={card.content} image={card.image} link={card.link} />
+                                        <FinanceCard key={index} title={card.title} content={card.content} image={card.image} type='credit'/>
                                     ))}
                                 </div>
                             </TabsContent>
                             <TabsContent value="capital-market">
                                 <div className='flex flex-wrap items-center justify-center gap-5 py-4'>
                                     {loans.map((card, index) => (
-                                        <FinanceCard key={index} title={card.title} content={card.content} image={card.image} link={card.link} />
+                                        <FinanceCard key={index} title={card.title} content={card.content} image={card.image} type='capital' />
                                     ))}
                                 </div>
                             </TabsContent>

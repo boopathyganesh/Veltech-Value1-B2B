@@ -25,7 +25,7 @@ const formSchema = z.object({
     lastName: z.string().min(1, "Last Name is required"),
     email: z.string().email("Invalid email address"),
     contact: z.string().min(10, "Contact number should be at least 10 digits"),
-    dob: z.date().nullable().refine((date) => date instanceof Date, {
+    dob: z.date().refine((date) => date instanceof Date, {
         message: "Invalid date",
     }),
     address: z.string().min(1, "Address is required"),
@@ -45,7 +45,7 @@ const ProfileForm = ({disabled}:ProfileFormProps) => {
             lastName: "",
             email: "",
             contact: "",
-            dob: undefined,
+            dob: new Date(),
             address: "",
             city: "",
             state: "",

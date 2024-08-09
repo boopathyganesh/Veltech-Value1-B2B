@@ -17,7 +17,6 @@ export default function Home() {
 						<GoldReward />
 						<ValueCoins />
 					</div>
-					{/* <Tracking /> */}
 					<div className="flex flex-col items-center justify-center gap-3">
 						<Membership />
 						{/* <GrantLetterViewer /> */}
@@ -31,6 +30,7 @@ export default function Home() {
 			</div>
 			<div className="flex items-center justify-center w-full p-4 gap-5">
 				<History />
+				<Tracking />
 			</div>
 		</main>
 	);

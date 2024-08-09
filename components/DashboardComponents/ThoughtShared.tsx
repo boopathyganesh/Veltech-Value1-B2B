@@ -14,7 +14,7 @@ import ThoughtForm from '../Forms/ThoughtForm'
 
 const ThoughtShared = () => {
     return (
-        <div className='flex flex-col items-center justify-center bg-secondary_bg w-1/3 h-[400px] p-5 rounded-2xl gap-5 text-secondary'>
+        <div className='flex flex-col items-center justify-center bg-dark_bg/10 w-1/3 h-[400px] p-5 rounded-2xl gap-5 text-secondary'>
             <h1 className='text-secondary font-medium text-xl '>Do you want to share any thought about Value1 as a Co-Owner?</h1>
             <p>All your thoughts were considered as a contribution for the development of Value1.</p>
             <div className='flex flex-col items-center justify-center gap-5 mt-10'>

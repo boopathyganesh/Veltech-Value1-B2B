@@ -52,12 +52,24 @@ const invoices = [
     totalAmount: "$300.00",
     paymentMethod: "Credit Card",
   },
+  {
+    invoice: "INV006",
+    paymentStatus: "Pending",
+    totalAmount: "$200.00",
+    paymentMethod: "Bank Transfer",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
 ]
 
 
 const History = () => {
   return (
-    <div className="flex flex-col items-center justify-center rounded-3xl w-full h-full bg-secondary_bg text-secondary p-5">
+    <div className="flex flex-col items-center justify-center rounded-3xl w-full h-full bg-dark_bg/10 text-secondary p-5">
       <h1 className='text-xl font-semibold'>Transaction History</h1>
       <div className='w-full p-5 h-full max-h-[500px] overflow-y-scroll'>
         <Table>

@@ -1,17 +1,38 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DealsCard from './ui/DealsCard'
 import Banner from './Banner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { brand } from '@/context/data';
+import { fetchMerchants, Merchant } from '@/lib/INRDealService';
 
 
 const OnlineDeals = () => {
     const [visibleItems, setVisibleItems] = useState(3); // Initial number of items to display
     const [activeTab, setActiveTab] = useState('top-brands'); // Initial active tab
+    const [merchants, setMerchants] = useState<Merchant[]>([]);
+    const [error, setError] = useState<string | null>(null);
     const router = useRouter();
+
+    useEffect(() => {
+        const getMerchants = async () => {
+            try {
+                const data = await fetchMerchants();
+                setMerchants(data);
+            } catch (err) {
+                setError((err as Error).message);
+            }
+        };
+
+        getMerchants();
+    }, []);
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     const handleViewMore = () => {
         if (visibleItems > 3 && activeTab === "trending-deals") {
             router.push("/reward-store/online-deals/trending-deals")
@@ -42,13 +63,13 @@ const OnlineDeals = () => {
                 <div className='mt-10 mb-5 md:mb-0'>
                     <div className="relative flex w-full flex-col">
                         <div className='flex flex-wrap items-center justify-center gap-5 py-4'>
-                            {brand.slice(0, visibleItems).map((card, index) => (
+                            {merchants.slice(0, visibleItems).map((card, index) => (
                                 <DealsCard
                                     key={card.id}
-                                    id={card.id}
-                                    title={card.title}
-                                    content={card.content}
-                                    image={card.imageUrl}
+                                    id={card.id.toString()}
+                                    title={card.merchant}
+                                    content={card.payout}
+                                    image={card.logo}
                                 />
                             ))}
                         </div>

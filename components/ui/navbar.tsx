@@ -8,7 +8,6 @@ import User from "@/public/images/mr.dummy.png";
 import Image from 'next/image';
 import { FaRegCircleUser } from "react-icons/fa6";
 import Link from 'next/link';
-
 import {
     Dialog,
     DialogContent,
@@ -19,6 +18,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { ProfileComponent } from '../DashboardComponents/ProfileComponent';
+import { handleSignOut } from '@/app/auth/signout';
 
 type PointerDownOutsideEvent = CustomEvent<{ originalEvent: PointerEvent }>;
 type FocusOutsideEvent = CustomEvent<{ originalEvent: FocusEvent }>;
@@ -69,7 +69,7 @@ const AppNavbar = () => {
                             </DropdownMenuItem>
                             <DropdownMenuSeparator aria-orientation='horizontal' className='w-full' />
                             <DropdownMenuItem>
-                                <button className='flex items-center justify-center gap-2' ><FaRegCircleUser className='text-lg' /> Logout</button>
+                                <button onClick={() => handleSignOut('/login')} className='flex items-center justify-center gap-2' ><FaRegCircleUser className='text-lg' /> Logout</button>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                         <DialogContent className='max-w-5xl w-full max-h-[800px] h-full' onInteractOutside={handleInteractionOutside}>

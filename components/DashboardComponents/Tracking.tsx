@@ -55,9 +55,9 @@ const invoices = [
 
 const Tracking = () => {
   return (
-    <div className="flex flex-col items-center justify-center rounded-3xl w-full h-80 p-4 bg-dark_bg/10 text-secondary">
-      <h1 className="text-xl font-medium">Tracking</h1>
-      <div className='w-full p-2 h-64 overflow-y-scroll'>
+    <div className="flex flex-col items-center justify-start rounded-3xl w-96 h-full p-4 bg-dark_bg/10 text-secondary">
+      <h1 className="text-xl font-medium mb-4">Tracking</h1>
+      <div className='w-full p-2 max-h-[500px] flex items-start justify-center overflow-y-scroll'>
         <Table>
           <TableHeader>
             <TableRow>

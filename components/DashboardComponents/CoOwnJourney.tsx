@@ -3,7 +3,7 @@ import {Timeline,TimelineComponent} from '../ui/timeline'
 
 const CoOwnJourney = () => {
   return (
-    <div className="flex flex-col items-center justify-center rounded-3xl w-1/3 h-[400px] bg-secondary_bg text-secondary p-3 gap-2 overflow-hidden">
+    <div className="flex flex-col items-center justify-center rounded-3xl w-1/3 h-[400px] bg-dark_bg/10 text-secondary p-3 gap-2 overflow-hidden">
       <h1 className='text-xl font-semibold w-full pl-10'>Co-Own Journey(timeline)</h1>
       <div className='overflow-y-scroll w-full h-72 flex items-start justify-center px-10'>
         <Timeline>

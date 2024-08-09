@@ -24,7 +24,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
 import ProfileForm from "../Forms/ProfileForm"
 import { useState } from "react"
-
+import KYCForm from "../Forms/KYCForm"
+import PdfViewer from "./PdfViewer"
 
 export function ProfileComponent() {
     const [block, setBlock] = useState<boolean>(true)
@@ -37,14 +38,11 @@ export function ProfileComponent() {
                 <div className="mx-auto grid w-full max-w-6xl gap-2">
                     <h1 className="text-3xl font-semibold">Profile Space</h1>
                 </div>
-                <div>
-                    <Tabs defaultValue="profile" className="w-full flex flex-col items-center justify-center gap-5">
+                <div className="flex items-center justify-center">
+                    <Tabs defaultValue="profile" className="flex flex-col items-center justify-center w-full">
                         <TabsList className="max-w-4xl mx-auto">
                             <TabsTrigger value="profile">
                                 <span>Profile</span>
-                            </TabsTrigger>
-                            <TabsTrigger value="security">
-                                <span>Security</span>
                             </TabsTrigger>
                             <TabsTrigger value="kyc">
                                 <span>KYC Details</span>
@@ -53,27 +51,34 @@ export function ProfileComponent() {
                                 <span>GrantLetter</span>
                             </TabsTrigger>
                         </TabsList>
-                        <div className="w-full h-[550px] rounded flex items-center justify-center p-2">
-                            <TabsContent value="profile" className="w-full flex items-center justify-center">
-                                <div className="w-full flex items-center justify-center gap-5 text-secondary">
-                                    <div className="w-1/3 h-full flex flex-col items-center justify-center gap-3">
-                                        <div className="w-32 h-32 p-2 rounded-full border-2 border-primary overflow-hidden">
-                                            <Image src={"/images/mr.dummy.png"} alt={""} height={500} width={500} className="w-full" />
-                                        </div>
-                                        <div className="flex flex-col items-center justify-center">
-                                            <h1 className="text-2xl font-medium">{"Mr.Dummy"}</h1>
-                                            <p className="text-lg">{"mr.dummy@gmail.com"}</p>
-                                            <span className="text-primary text-xl font-medium">{"Co-Own"}</span>
-                                        </div>
-                                        <button onClick={handleEditBtn} className='w-max px-4 py-3 rounded-2xl bg-primary font-medium'>Edit Profile</button>
+                        <TabsContent value="profile" className="w-full">
+                            <div className="w-full flex items-center justify-center gap-5 text-secondary h-[550px] rounded p-2">
+                                <div className="w-1/3 h-full flex flex-col items-center justify-center gap-3">
+                                    <div className="w-32 h-32 p-2 rounded-full border-2 border-primary overflow-hidden">
+                                        <Image src={"/images/mr.dummy.png"} alt={""} height={500} width={500} className="w-full" />
                                     </div>
-                                    <div className="w-2/3 h-[500px] flex items-start justify-center overflow-scroll pt-5">
-                                        <ProfileForm disabled={block} />
+                                    <div className="flex flex-col items-center justify-center">
+                                        <h1 className="text-2xl font-medium">{"Mr.Dummy"}</h1>
+                                        <p className="text-lg">{"mr.dummy@gmail.com"}</p>
+                                        <span className="text-primary text-xl font-medium">{"Co-Own"}</span>
                                     </div>
+                                    <button onClick={handleEditBtn} className='w-max px-4 py-3 rounded-2xl bg-primary font-medium'>Edit Profile</button>
                                 </div>
-                            </TabsContent>
-                            <TabsContent value="security">Change your password here.</TabsContent>
-                        </div>
+                                <div className="w-2/3 h-[500px] flex items-start justify-center overflow-scroll pt-5">
+                                    <ProfileForm disabled={block} />
+                                </div>
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="kyc" className="w-full">
+                            <div className="w-full flex items-center justify-center gap-5 text-secondary h-[550px] rounded p-2">
+                                <KYCForm disabled={false} />
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="grantletter" className="w-full">
+                            <div className="w-full flex items-center justify-center gap-5 text-secondary h-[600px] rounded p-2">
+                                <PdfViewer link="/pdf/GrantLetter-sample.pdf" />
+                            </div>
+                        </TabsContent>
                     </Tabs>
                 </div>
             </main>

@@ -102,7 +102,7 @@ export const data = {
 
 const Evaluation = () => {
   return (
-    <div className="flex flex-col items-center justify-start rounded-3xl w-1/3 h-[400px] bg-secondary_bg text-secondary overflow-hidden">
+    <div className="flex flex-col items-center justify-start rounded-3xl w-1/3 h-[400px] bg-dark_bg/10 text-secondary overflow-hidden">
       {/* <div className='w-max h-auto'>
         <Line options={options} data={data} height={320} width={500} />
       </div> */}
